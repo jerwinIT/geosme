@@ -1,0 +1,18 @@
+Step on how I build GeoSME:
+
+- Setup latest version of Nextjs
+- Set up my Github Repository
+- Clear boiler plates of nextjs
+- Create app routing
+- Create component folder
+- Create data folder for sample data
+- Create Navbar inside component/home
+    - Navbar for large screen
+    - Navbar for smaller screen
+    - Responsive.tsx
+    - Add Logo
+    - NavLink in /constant
+    - Make it responsive accessible to mobile view  also
+
+
+
