@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ResponsiveNavbar from "@/components/Home/Navbar/Responsive";
+import Footer from "@/components/Home/Footer/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
-import ThemeScript from "@/components/ThemeScript";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -23,13 +24,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <ThemeScript />
-      </head>
       <body className={`${font.className} antialiased`}>
-        <ResponsiveNavbar />
-        {children}
-        <ThemeToggle />
+        <ThemeProvider>
+          <div className="min-h-screen flex flex-col">
+            {/* Navigation */}
+            <ResponsiveNavbar />
+            
+            {/* Main Content */}
+            <main className="flex-1 pt-20">
+              {children}
+            </main>
+            
+            {/* Footer */}
+            <Footer />
+            
+            {/* Theme Toggle */}
+            <ThemeToggle />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -8,9 +8,12 @@ type Theme = 'light' | 'dark' | 'system';
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('system');
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   // Initialize theme from localStorage on mount
   useEffect(() => {
+    setMounted(true);
+    
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
       setTheme(savedTheme);
@@ -57,6 +60,11 @@ const ThemeToggle: React.FC = () => {
     { value: 'dark', label: 'Dark', icon: <MdDarkMode className="w-4 h-4" /> },
     { value: 'system', label: 'System', icon: <MdComputer className="w-4 h-4" /> },
   ];
+
+  // Don't render during SSR to avoid hydration mismatch
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-50">

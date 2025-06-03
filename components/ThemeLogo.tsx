@@ -20,9 +20,12 @@ const ThemeLogo: React.FC<ThemeLogoProps> = ({
 }) => {
   const [theme, setTheme] = useState<Theme>('system');
   const [systemPrefersDark, setSystemPrefersDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   // Initialize theme and system preference
   useEffect(() => {
+    setMounted(true);
+    
     // Get saved theme
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
@@ -76,6 +79,11 @@ const ThemeLogo: React.FC<ThemeLogoProps> = ({
 
   // Determine which logo to show
   const shouldShowDarkLogo = () => {
+    if (!mounted) {
+      // Return false during SSR/initial hydration to avoid mismatch
+      return false;
+    }
+    
     switch (theme) {
       case 'dark':
         return true;
@@ -89,6 +97,20 @@ const ThemeLogo: React.FC<ThemeLogoProps> = ({
   };
 
   const isDark = shouldShowDarkLogo();
+
+  // Show only light logo during SSR/initial render to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <Image
+        src="/Images/Logo/geosme-logo-light.png"
+        alt="geosme-logo"
+        width={width}
+        height={height}
+        priority={priority}
+        className={className}
+      />
+    );
+  }
 
   return (
     <>

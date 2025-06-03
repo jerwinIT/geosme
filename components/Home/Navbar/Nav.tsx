@@ -11,7 +11,7 @@ type NavProps = {
 
 export default function Nav({ openNav }: NavProps) {
   return (
-    <div className="flex w-full h-20 px-[100px] border border-black/20 bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] fixed">
+    <div className="flex w-full h-20 px-[100px] bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] fixed z-[1000]">
       <div className="flex items-center justify-between w-full max-w-[1440px] mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-4 w-1/4">
@@ -26,7 +26,7 @@ export default function Nav({ openNav }: NavProps) {
           {navLinks.map((links) => {
             return (
               <Link key={links.id} href={links.url}>
-                <p className="relative text-black/50 text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
+                <p className="relative text-text-secondary text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
                   {links.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black/50 transition-all duration-300 group-hover:w-full group-hover:bg-[#d72323]"></span>
                 </p>
@@ -38,7 +38,7 @@ export default function Nav({ openNav }: NavProps) {
         {/*Auth Buttons */}
         <div className="hidden lg:flex items-center justify-end gap-6 w-1/4">
           <Link href="/register-business">
-            <p className="relative text-black/50 text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
+            <p className="relative text-text-secondary text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
               Business Portal
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black/50 transition-all duration-300 group-hover:w-full group-hover:bg-[#d72323]"></span>
             </p>
@@ -47,13 +47,13 @@ export default function Nav({ openNav }: NavProps) {
           <div className="h-6 w-[1px] bg-black/20"></div>
 
           <Link href="/login">
-            <button className="bg-[#d72323] text-white px-6 py-2 rounded-full hover:bg-[#b31b1b] transition-colors duration-300 font-poppins font-normal text-sm leading-normal">
+            <button className="bg-[#d72323] text-[#fff] px-6 py-2 rounded-full hover:bg-[#b31b1b] transition-colors duration-300 font-poppins font-normal text-sm leading-normal">
               Login
             </button>
           </Link>
 
           <Link href="/signup">
-            <p className="relative text-black/50 text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
+            <p className="relative text-text-secondary text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
               Signup
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black/50 transition-all duration-300 group-hover:w-full group-hover:bg-[#d72323]"></span>
             </p>
