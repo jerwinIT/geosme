@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { BiSolidBusiness } from "react-icons/bi";
 
 export default function SearchBar() {
