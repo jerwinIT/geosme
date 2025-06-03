@@ -1,1 +1,171 @@
 @import "tailwindcss";
+
+/* Global body styling */
+body {
+    background-color: var(--color-light-gray);
+}
+
+@theme {
+    /* Map custom colors to Tailwind color system */
+    --color-primary-50: #fef2f2;
+    --color-primary-100: #fee2e2;
+    --color-primary-200: #fecaca;
+    --color-primary-300: #fca5a5;
+    --color-primary-400: #f87171;
+    --color-primary-500: #d72323;
+    --color-primary-600: #c53030;
+    --color-primary-700: #991b1b;
+    --color-primary-800: #7f1d1d;
+    --color-primary-900: #1c1917;
+    --color-primary-950: #0c0a09;
+
+    /* Semantic color mappings */
+    --color-background: #ffffff;
+    --color-surface: #f5f5f5;
+    --color-text: #111111;
+    --color-text-secondary: #555555;
+
+    /* Custom color aliases */
+    --color-white: #ffffff;
+    --color-light-gray: #f5f5f5;
+    --color-black: #111111;
+    --color-dark-gray: #333333;
+    --color-gray: #555555;
+}
+
+/* Manual dark mode class (overrides system preference) */
+.dark {
+    /* Dark mode primary color variants */
+    --color-primary-50: #1c1917;
+    --color-primary-100: #0c0a09;
+    --color-primary-200: #7f1d1d;
+    --color-primary-300: #991b1b;
+    --color-primary-400: #c53030;
+    --color-primary-500: #ff4444;
+    --color-primary-600: #f87171;
+    --color-primary-700: #fca5a5;
+    --color-primary-800: #fecaca;
+    --color-primary-900: #fee2e2;
+    --color-primary-950: #fef2f2;
+
+    /* Semantic colors for dark mode */
+    --color-background: #111111;
+    --color-surface: #2a2a2a;
+    --color-text: #ffffff;
+    --color-text-secondary: #aaaaaa;
+
+    /* Custom color aliases for dark mode */
+    --color-white: #111111;
+    --color-light-gray: #2a2a2a;
+    --color-black: #ffffff;
+    --color-dark-gray: #cccccc;
+    --color-gray: #aaaaaa;
+}
+
+/* Manual light mode class (overrides system preference) */
+.light {
+    /* Light mode primary colors (same as default) */
+    --color-primary-50: #fef2f2;
+    --color-primary-100: #fee2e2;
+    --color-primary-200: #fecaca;
+    --color-primary-300: #fca5a5;
+    --color-primary-400: #f87171;
+    --color-primary-500: #d72323;
+    --color-primary-600: #c53030;
+    --color-primary-700: #991b1b;
+    --color-primary-800: #7f1d1d;
+    --color-primary-900: #1c1917;
+    --color-primary-950: #0c0a09;
+
+    /* Semantic colors for light mode */
+    --color-background: #ffffff;
+    --color-surface: #f5f5f5;
+    --color-text: #111111;
+    --color-text-secondary: #555555;
+
+    /* Custom color aliases for light mode */
+    --color-white: #ffffff;
+    --color-light-gray: #f5f5f5;
+    --color-black: #111111;
+    --color-dark-gray: #333333;
+    --color-gray: #555555;
+}
+
+/* System preference dark mode (only applies when no manual class is set) */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) {
+        /* Dark mode primary color variants */
+        --color-primary-50: #1c1917;
+        --color-primary-100: #0c0a09;
+        --color-primary-200: #7f1d1d;
+        --color-primary-300: #991b1b;
+        --color-primary-400: #c53030;
+        --color-primary-500: #ff4444;
+        --color-primary-600: #f87171;
+        --color-primary-700: #fca5a5;
+        --color-primary-800: #fecaca;
+        --color-primary-900: #fee2e2;
+        --color-primary-950: #fef2f2;
+
+        /* Semantic colors for dark mode */
+        --color-background: #111111;
+        --color-surface: #2a2a2a;
+        --color-text: #ffffff;
+        --color-text-secondary: #aaaaaa;
+
+        /* Custom color aliases for dark mode */
+        --color-white: #111111;
+        --color-light-gray: #2a2a2a;
+        --color-black: #ffffff;
+        --color-dark-gray: #cccccc;
+        --color-gray: #aaaaaa;
+    }
+}
+
+/* Additional utility styles */
+.animate-in {
+    animation: animateIn 0.2s ease-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.2s ease-out;
+}
+
+.slide-in-from-bottom-2 {
+    animation: slideInFromBottom 0.2s ease-out;
+}
+
+@keyframes animateIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+

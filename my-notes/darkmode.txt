@@ -1,0 +1,13 @@
+        /* Dark mode colors */
+        --color-primary: #ff4444; /* Slightly brighter red for dark mode */
+        --color-white: #111111; /* Inverted for dark mode */
+        --color-light-gray: #2a2a2a; /* Dark equivalent */
+        --color-black: #ffffff; /* Inverted for dark mode */
+        --color-dark-gray: #cccccc; /* Light equivalent */
+        --color-gray: #aaaaaa; /* Light equivalent */
+        
+        /* Semantic colors for dark mode */
+        --color-background: #111111;
+        --color-surface: #2a2a2a;
+        --color-text: #ffffff;
+        --color-text-secondary: #aaaaaa;

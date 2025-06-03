@@ -2,20 +2,14 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ResponsiveNavbar from "@/components/Home/Navbar/Responsive";
+import ThemeToggle from "@/components/ThemeToggle";
+import ThemeScript from "@/components/ThemeScript";
+
 const font = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "GeoSME",
@@ -29,9 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ThemeScript />
+      </head>
       <body className={`${font.className} antialiased`}>
         <ResponsiveNavbar />
         {children}
+        <ThemeToggle />
       </body>
     </html>
   );

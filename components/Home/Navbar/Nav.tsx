@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/constant/constant";
 import { HiBars3BottomRight } from "react-icons/hi2";
+import ThemeLogo from "@/components/ThemeLogo";
 
 type NavProps = {
   openNav: () => void;
@@ -14,16 +15,14 @@ export default function Nav({ openNav }: NavProps) {
       <div className="flex items-center justify-between w-full max-w-[1440px] mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-4 w-1/4">
-          <Image
-            src="/Images/Logo/geosme-logo-light.png"
-            alt="geosme-logo"
+          <ThemeLogo
             width={153}
             height={50}
-            priority
+            priority={true}
           />
         </div>
         {/* Nav Links */}
-        <div className="hidden md:flex items-center justify-center gap-8 w-2/4">
+        <div className="hidden lg:flex items-center justify-center gap-8 w-2/4">
           {navLinks.map((links) => {
             return (
               <Link key={links.id} href={links.url}>
@@ -37,7 +36,7 @@ export default function Nav({ openNav }: NavProps) {
         </div>
 
         {/*Auth Buttons */}
-        <div className="hidden md:flex items-center justify-end gap-6 w-1/4">
+        <div className="hidden lg:flex items-center justify-end gap-6 w-1/4">
           <Link href="/register-business">
             <p className="relative text-black/50 text-sm font-poppins font-normal leading-normal group hover:text-[#d72323]">
               Business Portal
@@ -63,7 +62,7 @@ export default function Nav({ openNav }: NavProps) {
         {/* Mobile Menu */}
         <HiBars3BottomRight
           onClick={openNav}
-          className="w-8 h-8 cursor-pointer text-[#d72323] md:hidden hover:scale-110 active:scale-95 transition-transform duration-200"
+          className="w-8 h-8 cursor-pointer text-[#d72323] lg:hidden hover:scale-110 active:scale-95 transition-transform duration-200"
         />
       </div>
     </div>
