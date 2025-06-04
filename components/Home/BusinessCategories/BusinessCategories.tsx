@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import Button from "@/components/Button";
+
 import {
   FaStore,
   FaUtensils,

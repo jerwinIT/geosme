@@ -1,7 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import MunicipalityCard from "@/components/MunicipalityCard";
-import Button from "@/components/Button";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const municipalities = Array.from({ length: 10 }, (_, i) => ({
