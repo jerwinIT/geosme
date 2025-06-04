@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Button from "@/components/Button";
 import {
   FaStore,
@@ -30,70 +30,97 @@ const businessCategories = [
 
 export default function BusinessCategories() {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftButton, setShowLeftButton] = useState(false);
+  const [showRightButton, setShowRightButton] = useState(true);
+
+  const checkScrollPosition = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeftButton(scrollLeft > 0);
+      setShowRightButton(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollPosition();
+  }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 400;
+      const scrollAmount = 200; // Adjusted for business category width
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
       });
+      // Check scroll position after animation
+      setTimeout(checkScrollPosition, 300);
     }
   };
 
   return (
-    <div className="py-12 relative">
-      <div className="flex items-center">
-        {/* Left Scroll Button */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:scale-110 focus:outline-none"
-          aria-label="Scroll left"
-        >
-          <IoIosArrowBack className="w-6 h-6" />
-        </button>
+    <div className="py-8 md:py-12 relative overflow-visible">
+      <div className="flex items-center gap-2 md:gap-4">
+        {/* Scrollable Container */}
         <div
           ref={scrollRef}
-          className="flex justify-start items-center overflow-x-auto space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 2xl:space-x-[50px] scrollbar-hide hide-scrollbar"
+          className="flex justify-start items-center overflow-x-auto space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-20 2xl:space-x-[50px] scrollbar-hide flex-1 pt-2"
           style={{
             scrollBehavior: "smooth",
-            width: `calc(${businessCategories.length * 200}px + ${
-              (businessCategories.length - 1) * 50
-            }px)`,
-            maxWidth: "100%",
           }}
+          onScroll={checkScrollPosition}
         >
           {businessCategories.map((category, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center min-w-[160px] cursor-pointer hover:opacity-80 transition-opacity"
+              className="flex flex-col items-center min-w-[120px] sm:min-w-[140px] md:min-w-[160px] cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 group pt-1"
             >
-              <div className="w-[50px] h-[50px] rounded-full bg-primary-500 flex items-center justify-center mb-2">
-                <category.icon className="w-6 h-6 text-white" />
+              <div className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 transition-all duration-300 group-hover:bg-primary-500 ">
+                <category.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-500 transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="text-base font-medium text-center text-black">
+              <h3 className="text-sm sm:text-base font-medium text-center text-black leading-tight">
                 {category.title}
               </h3>
-              <p className="text-base text-gray-500 text-center">
-                {category.count}
-              </p>
             </div>
           ))}
         </div>
-        {/* Right Scroll Button */}
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:scale-110 focus:outline-none"
-          aria-label="Scroll right"
-        >
-          <IoIosArrowForward className="w-6 h-6" />
-        </button>
+
+        {/* Navigation Buttons Container */}
+        <div className="flex gap-1 sm:gap-2 flex-shrink-0 items-center justify-center relative z-10">
+          {/* Left Scroll Button */}
+          <button
+            onClick={() => scroll("left")}
+            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300  ${
+              showLeftButton
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-50 pointer-events-none"
+            }`}
+            aria-label="Scroll left"
+            disabled={!showLeftButton}
+          >
+            <IoIosArrowBack className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          </button>
+
+          {/* Right Scroll Button */}
+          <button
+            onClick={() => scroll("right")}
+            className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300  ${
+              showRightButton
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-50 pointer-events-none"
+            }`}
+            aria-label="Scroll right"
+            disabled={!showRightButton}
+          >
+            <IoIosArrowForward className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          </button>
+        </div>
       </div>
+
       <style jsx global>{`
-        .hide-scrollbar::-webkit-scrollbar {
+        .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
-        .hide-scrollbar {
+        .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
