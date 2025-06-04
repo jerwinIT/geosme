@@ -2,14 +2,12 @@
 import React, { useRef } from "react";
 import MunicipalityCard from "@/components/MunicipalityCard";
 import Button from "@/components/Button";
-
-const municipalities = Array.from({ length: 20 }, (_, i) => ({
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+const municipalities = Array.from({ length: 10 }, (_, i) => ({
   title: i === 0 ? "All" : `Municipality ${i}`,
   subtitle:
     i === 0 ? "10,000 SMEs" : `${Math.floor(Math.random() * 1000)} businesses`,
-  imageUrl: `https://picsum.photos/300/100?random=${i}`,
-  overlayColor: "bg-black",
-  overlayOpacity: "bg-opacity-70",
+  imageUrl: "/Images/batangas-capitol-new.jpg",
 }));
 
 export default function Municipalities() {
@@ -26,15 +24,21 @@ export default function Municipalities() {
   };
 
   return (
-    <div className="py-12 relative">
-      <h1 className="text-2xl font-bold mb-4">Municipality</h1>
+    <div className="pt-12 relative">
+      {/* <h1 className="text-2xl font-bold mb-4">Municipality</h1> */}
       <div className="flex items-center">
         {/* Left Scroll Button */}
-        <Button name="<" className="mr-2" onClick={() => scroll("left")} />
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-0 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:scale-110 focus:outline-none"
+          aria-label="Scroll left"
+        >
+          <IoIosArrowBack className="w-6 h-6" />
+        </button>
         {/* Scrollable Container */}
         <div
           ref={scrollRef}
-          className="flex justify-start items-center overflow-x-auto space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 2xl:space-x-[50px] scrollbar-hide hide-scrollbar h-[140px]"
+          className="flex justify-start items-center overflow-x-auto space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 2xl:space-x-[50px] scrollbar-hide hide-scrollbar h-[100px]"
           style={{
             scrollBehavior: "smooth",
             width: `calc(${municipalities.length * 320}px + ${
@@ -49,13 +53,17 @@ export default function Municipalities() {
               title={m.title}
               subtitle={m.subtitle}
               imageUrl={m.imageUrl}
-              overlayColor={m.overlayColor}
-              overlayOpacity={m.overlayOpacity}
             />
           ))}
         </div>
         {/* Right Scroll Button */}
-        <Button name=">" className="ml-2" onClick={() => scroll("right")} />
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-0 z-10 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 transform hover:scale-110 focus:outline-none"
+          aria-label="Scroll right"
+        >
+          <IoIosArrowForward className="w-6 h-6" />
+        </button>
       </div>
       <style jsx global>{`
         .hide-scrollbar::-webkit-scrollbar {
