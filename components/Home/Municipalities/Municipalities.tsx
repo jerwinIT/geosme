@@ -34,7 +34,6 @@ export default function Municipalities() {
       ) as HTMLElement;
       if (firstCard) {
         const cardRect = firstCard.getBoundingClientRect();
-        const containerRect = scrollRef.current.getBoundingClientRect();
 
         // Get the computed style to find the actual margin/spacing
         const computedStyle = window.getComputedStyle(firstCard);
