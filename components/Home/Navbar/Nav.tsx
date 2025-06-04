@@ -3,6 +3,7 @@ import Link from "next/link";
 import { navLinks } from "@/constant/constant";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import ThemeLogo from "@/components/ThemeLogo";
+import Button from "@/components/Button";
 
 type NavProps = {
   openNav: () => void;
@@ -10,15 +11,11 @@ type NavProps = {
 
 export default function Nav({ openNav }: NavProps) {
   return (
-    <div className="flex w-full h-20 px-[100px] bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] fixed z-[1000]">
+    <div className="flex w-full h-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[100px] bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] fixed z-[1000]">
       <div className="flex items-center justify-between w-full max-w-[1440px] mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-4 w-1/4">
-          <ThemeLogo
-            width={153}
-            height={50}
-            priority={true}
-          />
+          <ThemeLogo width={153} height={50} priority={true} />
         </div>
         {/* Nav Links */}
         <div className="hidden lg:flex items-center justify-center gap-8 w-2/4">
@@ -46,9 +43,7 @@ export default function Nav({ openNav }: NavProps) {
           <div className="h-6 w-[1px] bg-black/20"></div>
 
           <Link href="/login">
-            <button className="bg-[#d72323] text-[#fff] px-6 py-2 rounded-full hover:bg-[#b31b1b] transition-colors duration-300 font-poppins font-normal text-sm leading-normal">
-              Login
-            </button>
+            <Button name="Login" />
           </Link>
 
           <Link href="/signup">

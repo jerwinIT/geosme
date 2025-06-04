@@ -11,7 +11,6 @@ const font = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-
 export const metadata: Metadata = {
   title: "GeoSME",
   description: "GeoSME Landing Page",
@@ -29,15 +28,15 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
             {/* Navigation */}
             <ResponsiveNavbar />
-            
+
             {/* Main Content */}
-            <main className="flex-1 pt-20">
+            <main className="flex-1 pt-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[100px]">
               {children}
             </main>
-            
+
             {/* Footer */}
             <Footer />
-            
+
             {/* Theme Toggle */}
             <ThemeToggle />
           </div>
