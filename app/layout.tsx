@@ -5,6 +5,7 @@ import ResponsiveNavbar from "@/components/Home/Navbar/Responsive";
 import Footer from "@/components/Home/Footer/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
 import ThemeProvider from "@/components/ThemeProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -44,6 +45,8 @@ export default function RootLayout({
             <ThemeToggle />
           </div>
         </ThemeProvider>
+
+        <SpeedInsights />
       </body>
     </html>
   );
