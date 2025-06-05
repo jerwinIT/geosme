@@ -1,23 +1,34 @@
 import React from "react";
+import Image from "next/image";
+import { Municipality } from "@/types";
 
-interface MunicipalityCardProps {
-  title: string;
-  subtitle: string;
-  imageUrl: string;
+interface MunicipalityCardProps extends Municipality {
+  onError?: (error: Error) => void;
 }
 
 const MunicipalityCard: React.FC<MunicipalityCardProps> = ({
   title,
   subtitle,
   imageUrl,
+  onError,
 }) => {
+  const handleImageError = () => {
+    if (onError) {
+      onError(new Error(`Failed to load image for ${title}`));
+    }
+  };
+
   return (
     <div className="relative bg-background rounded-xl sm:rounded-2xl overflow-hidden w-full h-[90px] sm:h-[100px] md:h-[110px] lg:h-[120px] xl:h-[130px] shadow-lg transition-transform duration-300 hover:text-primary-500 cursor-pointer group hover:scale-[1.02]">
       {/* Background Image */}
-      <img
+      <Image
         src={imageUrl}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover"
+        fill
+        className="object-cover"
+        onError={handleImageError}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        priority={false}
       />
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-[#111]/40 transition-colors duration-300 group-hover:bg-primary-500/40" />

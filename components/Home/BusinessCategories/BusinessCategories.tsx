@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-
+import BusinessCategoriesSkeleton from "@/components/BusinessCategoriesSkeleton";
 import {
   FaStore,
   FaUtensils,
@@ -32,6 +32,7 @@ export default function BusinessCategories() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const checkScrollPosition = () => {
     if (scrollRef.current) {
@@ -43,6 +44,11 @@ export default function BusinessCategories() {
 
   useEffect(() => {
     checkScrollPosition();
+    // Simulate loading state
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const scroll = (direction: "left" | "right") => {
@@ -58,7 +64,7 @@ export default function BusinessCategories() {
   };
 
   return (
-    <div className="py-8 md:py-12 relative overflow-visible">
+    <div className="relative overflow-visible">
       <div className="flex items-center gap-2 md:gap-4">
         {/* Scrollable Container */}
         <div
@@ -66,22 +72,30 @@ export default function BusinessCategories() {
           className="flex justify-start items-center overflow-x-auto space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-20 2xl:space-x-[50px] scrollbar-hide flex-1 pt-2"
           style={{
             scrollBehavior: "smooth",
+            msOverflowStyle: "none",
+            scrollbarWidth: "none",
           }}
           onScroll={checkScrollPosition}
         >
-          {businessCategories.map((category, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center min-w-[120px] sm:min-w-[140px] md:min-w-[160px] cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 group pt-1"
-            >
-              <div className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 transition-all duration-300 group-hover:bg-primary-500 ">
-                <category.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-500 transition-colors duration-300 group-hover:text-white" />
-              </div>
-              <h3 className="text-sm sm:text-base font-medium text-center text-black leading-tight">
-                {category.title}
-              </h3>
-            </div>
-          ))}
+          {isLoading
+            ? // Show skeleton loading
+              Array.from({ length: businessCategories.length }).map(
+                (_, idx) => <BusinessCategoriesSkeleton key={idx} />
+              )
+            : // Show actual categories
+              businessCategories.map((category, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center min-w-[120px] sm:min-w-[140px] md:min-w-[160px] cursor-pointer hover:opacity-80 transition-opacity flex-shrink-0 group pt-1"
+                >
+                  <div className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 transition-all duration-300 group-hover:bg-primary-500 ">
+                    <category.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-500 transition-colors duration-300 group-hover:text-white" />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-medium text-center text-black leading-tight">
+                    {category.title}
+                  </h3>
+                </div>
+              ))}
         </div>
 
         {/* Navigation Buttons Container */}
@@ -95,7 +109,7 @@ export default function BusinessCategories() {
                 : "opacity-50 pointer-events-none"
             }`}
             aria-label="Scroll left"
-            disabled={!showLeftButton}
+            disabled={!showLeftButton || isLoading}
           >
             <IoIosArrowBack className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
@@ -109,7 +123,7 @@ export default function BusinessCategories() {
                 : "opacity-50 pointer-events-none"
             }`}
             aria-label="Scroll right"
-            disabled={!showRightButton}
+            disabled={!showRightButton || isLoading}
           >
             <IoIosArrowForward className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
