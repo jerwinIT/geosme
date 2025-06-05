@@ -118,7 +118,7 @@ export default function Municipalities() {
                   <MunicipalityCardSkeleton />
                 </div>
               ))
-            : municipalities.map((m, idx) => (
+            : municipalities.map((m) => (
                 <div
                   key={m.id}
                   data-card

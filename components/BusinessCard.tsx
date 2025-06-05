@@ -31,9 +31,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
           alt={name}
           fill
           className="object-cover transition-transform group-hover:scale-105"
-          onError={(e) =>
-            onError(new Error(`Failed to load image for ${name}`))
-          }
+          onError={() => onError(new Error(`Failed to load image for ${name}`))}
         />
         <button
           onClick={() => onFavoriteToggle(id)}
