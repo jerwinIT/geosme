@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import MunicipalityCard from "@/components/MunicipalityCard";
 import MunicipalityCardSkeleton from "@/components/MunicipalityCardSkeleton";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const municipalities = Array.from({ length: 10 }, (_, i) => ({
   id: `municipality-${i}`,
@@ -134,8 +135,8 @@ export default function Municipalities() {
               ))}
         </div>
 
-        {/* Navigation Buttons Container */}
-        <div className="flex gap-1 sm:gap-2 flex-shrink-0 items-center justify-center relative z-10">
+        {/* Navigation Buttons Container - Hidden on mobile and tablet, visible on lg+ */}
+        <div className="hidden lg:flex gap-1 sm:gap-2 flex-shrink-0 items-center justify-center relative z-10">
           {/* Left Scroll Button */}
           <button
             onClick={() => scroll("left")}
@@ -163,6 +164,15 @@ export default function Municipalities() {
           >
             <IoIosArrowForward className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
+        </div>
+      </div>
+
+      {/* Mobile & Tablet Swipe Indicator - Only visible on mobile and tablet */}
+      <div className="lg:hidden flex flex-col items-center mt-4">
+        <div className="flex items-center text-gray-500 gap-2">
+          <HiChevronLeft className="w-4 h-4" />
+          <span className="text-xs font-medium">Swipe to explore</span>
+          <HiChevronRight className="w-4 h-4" />
         </div>
       </div>
 
