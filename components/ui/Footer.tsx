@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import ThemeLogo from "@/components/ThemeLogo";
+import ThemeLogo from "@/components/ui/Theme/ThemeLogo";
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
@@ -20,8 +20,9 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <ThemeLogo width={153} height={50} className="mb-4" />
             <p className="text-text-secondary max-w-md">
-              Discover and connect with Small and Medium Enterprises across Batangas Province. 
-              Find services, explore market trends, and support local businesses.
+              Discover and connect with Small and Medium Enterprises across
+              Batangas Province. Find services, explore market trends, and
+              support local businesses.
             </p>
           </div>
 
@@ -30,22 +31,34 @@ export default function Footer() {
             <h3 className="text-text font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/map" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/map"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Map
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/about"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/register-business" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/register-business"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Business Portal
                 </Link>
               </li>
@@ -57,22 +70,34 @@ export default function Footer() {
             <h3 className="text-text font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/login" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/login"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Login
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/signup"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Sign Up
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/contact"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/help" className="text-text-secondary hover:text-primary transition-colors">
+                <Link
+                  href="/help"
+                  className="text-text-secondary hover:text-primary transition-colors"
+                >
                   Help Center
                 </Link>
               </li>
@@ -83,13 +108,19 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-text-secondary text-sm">
-            © {currentYear || '2024'} GeoSME. All rights reserved.
+            © {currentYear || "2024"} GeoSME. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <Link href="/privacy" className="text-text-secondary hover:text-primary text-sm transition-colors">
+            <Link
+              href="/privacy"
+              className="text-text-secondary hover:text-primary text-sm transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-text-secondary hover:text-primary text-sm transition-colors">
+            <Link
+              href="/terms"
+              className="text-text-secondary hover:text-primary text-sm transition-colors"
+            >
               Terms of Service
             </Link>
           </div>
@@ -97,4 +128,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}

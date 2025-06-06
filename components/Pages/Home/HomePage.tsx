@@ -1,8 +1,8 @@
 import React from "react";
-import HeroSection from "./Hero/HeroSection";
-import Municipalities from "./Municipalities/Municipalities";
-import BusinessCategories from "./BusinessCategories/BusinessCategories";
-import BusinessFeeds from "./BusinessFeeds/BusinessFeeds";
+import HeroSection from "./HeroSection";
+import Municipalities from "./Municipalities";
+import BusinessCategories from "./BusinessCategories";
+import BusinessFeeds from "./BusinessFeeds";
 //This is where we add hero section, features section, about section, and contact section
 
 export default function HomePage() {

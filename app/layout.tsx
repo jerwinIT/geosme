@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import ResponsiveNavbar from "@/components/Home/Navbar/Responsive";
-import Footer from "@/components/Home/Footer/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
-import ThemeProvider from "@/components/ThemeProvider";
+import ResponsiveNavbar from "@/components/ui/Navbar/Responsive";
+import Footer from "@/components/ui/Footer";
+import ThemeToggle from "@/components/ui/Theme/ThemeToggle";
+import ThemeProvider from "@/components/ui/Theme/ThemeProvider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const font = Poppins({

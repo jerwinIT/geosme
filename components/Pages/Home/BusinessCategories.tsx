@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import BusinessCategoriesSkeleton from "@/components/BusinessCategoriesSkeleton";
+import BusinessCategoriesSkeleton from "@/components/ui/Skeleton/BusinessCategoriesSkeleton";
 import {
   FaStore,
   FaUtensils,
@@ -65,7 +65,10 @@ export default function BusinessCategories() {
   };
 
   return (
-    <div className="relative overflow-visible">
+    <div
+      id="business-categories"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8"
+    >
       <div className="flex items-center gap-2 md:gap-4">
         {/* Scrollable Container */}
         <div

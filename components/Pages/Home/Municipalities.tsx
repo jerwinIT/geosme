@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
-import MunicipalityCard from "@/components/MunicipalityCard";
-import MunicipalityCardSkeleton from "@/components/MunicipalityCardSkeleton";
+import MunicipalityCard from "@/components/ui/Cards/MunicipalityCard";
+import MunicipalityCardSkeleton from "@/components/ui/Skeleton/MunicipalityCardSkeleton";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -96,7 +96,7 @@ export default function Municipalities() {
   };
 
   return (
-    <div className="pt-8 md:pt-12 relative overflow-visible">
+    <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8e">
       <div className="flex items-center gap-2 md:gap-4">
         {/* Scrollable Container */}
         <div

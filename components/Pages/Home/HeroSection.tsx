@@ -1,8 +1,8 @@
 import React from "react";
-import SearchBar from "@/components/Helper/SearchBar";
+import SearchBar from "@/components/ui/SearchBar";
 import Link from "next/link";
-import MunicipalityCard from "@/components/MunicipalityCard";
-import MunicipalityCardSkeleton from "@/components/MunicipalityCardSkeleton";
+import MunicipalityCard from "@/components/ui/Cards/MunicipalityCard";
+import MunicipalityCardSkeleton from "@/components/ui/Skeleton/MunicipalityCardSkeleton";
 import { Municipality } from "@/types";
 
 export default function HeroSection() {
