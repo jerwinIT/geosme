@@ -60,8 +60,8 @@ export const mobileNavLinks = [
   },
   {
     id: 6,
-    url: "/signup",
-    label: "Signup",
+    url: "/auth/signup",
+    label: "Sign Up",
     icon: HiUserPlus,
   },
 ];

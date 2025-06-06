@@ -1,5 +1,7 @@
 export { default as MunicipalityCard } from "./Cards/MunicipalityCard";
 export { default as Button } from "./Buttons/Button";
+export { Button as ShadcnButton, buttonVariants } from "./button";
+export { Input } from "./input";
 export { default as ThemeLogo } from "./Theme/ThemeLogo";
 export { default as ThemeProvider } from "./Theme/ThemeProvider";
 export { default as ThemeToggle } from "./Theme/ThemeToggle";

@@ -134,21 +134,21 @@ export default function Nav({ openNav }: NavProps) {
           </Link>
 
           <Link
-            href="/signup"
+            href="/auth/signup"
             className="relative group"
-            aria-current={isActiveLink("/signup") ? "page" : undefined}
+            aria-current={isActiveLink("/auth/signup") ? "page" : undefined}
           >
             <p
               className={`relative text-sm font-poppins font-normal leading-normal transition-colors duration-300 ${
-                isActiveLink("/signup")
+                isActiveLink("/auth/signup")
                   ? "text-[#d72323] font-medium"
                   : "text-text-secondary group-hover:text-[#d72323]"
               }`}
             >
-              Signup
+              Sign Up
               <span
                 className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-                  isActiveLink("/signup")
+                  isActiveLink("/auth/signup")
                     ? "w-full bg-[#d72323]"
                     : "w-0 bg-black/50 group-hover:w-full group-hover:bg-[#d72323]"
                 }`}

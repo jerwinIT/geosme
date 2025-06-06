@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Municipality, PaginationParams, SearchParams } from "@/types";
-import { MunicipalityService } from "@/services/municipality.service";
+import { getMunicipalities } from "@/services/municipality.service";
 
 interface UseMunicipalitiesReturn {
   municipalities: Municipality[];
@@ -20,7 +20,7 @@ export function useMunicipalities(
     try {
       setIsLoading(true);
       setError(null);
-      const response = await MunicipalityService.getMunicipalities(params);
+      const response = await getMunicipalities(params);
 
       if (response.error) {
         setError(response.error);
