@@ -82,15 +82,15 @@ export default function Nav({ openNav }: NavProps) {
         <div className="hidden lg:flex items-center justify-end gap-6 w-1/4">
           <div className="relative group">
             <Link
-              href="/register-business"
+              href="/business-portal"
               className="relative group"
               aria-current={
-                isActiveLink("/register-business") ? "page" : undefined
+                isActiveLink("/business-portal") ? "page" : undefined
               }
             >
               <p
                 className={`relative text-sm font-poppins font-normal leading-normal transition-colors duration-300 ${
-                  isActiveLink("/register-business")
+                  isActiveLink("/business-portal")
                     ? "text-[#d72323] font-medium"
                     : "text-text-secondary group-hover:text-[#d72323]"
                 }`}
@@ -98,7 +98,7 @@ export default function Nav({ openNav }: NavProps) {
                 Business Portal
                 <span
                   className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
-                    isActiveLink("/register-business")
+                    isActiveLink("/business-portal")
                       ? "w-full bg-[#d72323]"
                       : "w-0 bg-black/50 group-hover:w-full group-hover:bg-[#d72323]"
                   }`}

@@ -1,6 +1,6 @@
 "use client";
-
 import { useEffect, useRef } from "react";
+import { HiCheck } from "react-icons/hi2";
 
 // Add global styles for animations
 if (typeof document !== "undefined") {
@@ -20,6 +20,7 @@ if (typeof document !== "undefined") {
 interface FeatureSectionProps {
   title: string;
   description: string;
+  list: string[];
   imagePlaceholder: string;
   imagePosition: "left" | "right";
   index: number;
@@ -28,6 +29,7 @@ interface FeatureSectionProps {
 function FeatureSection({
   title,
   description,
+  list,
   imagePlaceholder,
   imagePosition,
   index,
@@ -111,9 +113,23 @@ function FeatureSection({
                 )
               )}
             </h3>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto md:mx-0">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto md:mx-0 mb-6">
               {description}
             </p>
+
+            {/* List Section */}
+            {list && list.length > 0 && (
+              <ul className="space-y-3 sm:space-y-4">
+                {list.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-left">
+                    <HiCheck className="w-5 h-5 sm:w-6 sm:h-6 text-primary-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
@@ -121,26 +137,38 @@ function FeatureSection({
   );
 }
 
-export function WhatWeDo() {
+export default function StrategicBusinessIntelligence() {
   const features = [
     {
-      title: "Interactive Mapping",
-      description:
-        "Our GIS-powered interactive map allows consumers to discover and locate SMEs across Batangas Province, with detailed information about each business and navigation assistance.",
+      title: "GIS Analytics",
+      description: "Visualize market opportunities with location intelligence",
+      list: [
+        "Business density heatmaps identify underserved areas",
+        "Competitor distribution mapping reveals market gaps",
+        "Consumer traffic patterns highlight optimal locations",
+      ],
       imagePlaceholder: "Interactive Map Interface",
       imagePosition: "left" as const,
     },
     {
-      title: "Business Directory",
-      description:
-        "We maintain a comprehensive directory of SMEs in Batangas, categorized by industry, location, and services offered, making it easy for consumers to find exactly what they're looking for.",
+      title: "Location Intelligence",
+      description: "Make strategic decisions based on geographic data",
+      list: [
+        "Appear on our interactive map",
+        "Analyze competitor distribution by area",
+        "Visualize customer traffic patterns",
+      ],
       imagePlaceholder: "Business Directory Dashboard",
       imagePosition: "right" as const,
     },
     {
-      title: "Market Insights",
-      description:
-        "We analyze business density, consumer behavior, and market trends to provide valuable insights to both existing business owners and entrepreneurs looking for opportunities.",
+      title: "Market Demand Analysis",
+      description: "Identify emerging opportunities",
+      list: [
+        "Search trend analytics reveal consumer interests",
+        "Seasonal demand patterns for strategic planning",
+        "Emerging business category identification",
+      ],
       imagePlaceholder: "Analytics & Insights",
       imagePosition: "left" as const,
     },
@@ -151,11 +179,12 @@ export function WhatWeDo() {
       <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold text-center text-text mb-4 sm:mb-6 leading-tight">
-            What We <span className="text-primary-500">Do</span>
+            Strategic{" "}
+            <span className="text-primary-500">Business Intelligence</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-            Empowering small and medium enterprises in Batangas through
-            innovative technology and comprehensive business support services.
+            Our platform provides comprehensive GIS analytics and FinTech
+            adoption insights to help your business make data-driven decisions.
           </p>
         </div>
 
@@ -165,6 +194,7 @@ export function WhatWeDo() {
               key={index}
               title={feature.title}
               description={feature.description}
+              list={feature.list}
               imagePlaceholder={feature.imagePlaceholder}
               imagePosition={feature.imagePosition}
               index={index}

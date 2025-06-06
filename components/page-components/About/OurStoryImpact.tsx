@@ -277,7 +277,7 @@ function StatCard({ number, label, index, icon }: StatCardProps) {
   );
 }
 
-export function OurStoryImpact() {
+export default function OurStoryImpact() {
   const impactStats = [
     {
       number: "2,500+",

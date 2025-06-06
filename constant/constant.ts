@@ -25,11 +25,6 @@ export const navLinks = [
     url: "/about",
     label: "About",
   },
-  // {
-  //   id: 4,
-  //   url: "/register-business",
-  //   label: "Register Your Business",
-  // },
 ];
 
 export const mobileNavLinks = [
@@ -53,7 +48,7 @@ export const mobileNavLinks = [
   },
   {
     id: 4,
-    url: "/register-business",
+    url: "/business-portal",
     label: "Business Portal",
     icon: HiBuildingOffice2,
   },

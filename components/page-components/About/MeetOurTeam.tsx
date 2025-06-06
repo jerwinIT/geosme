@@ -185,7 +185,7 @@ function TeamMemberCard({
   );
 }
 
-export function MeetOurTeam() {
+export default function MeetOurTeam() {
   const teamMembers = [
     {
       name: "Jerwin Louise G. Peria",

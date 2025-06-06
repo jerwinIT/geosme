@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import ResponsiveNavbar from "@/components/ui/Navbar/Responsive";
+import { ResponsiveNavbar } from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import ThemeToggle from "@/components/ui/Theme/ThemeToggle";
 import ThemeProvider from "@/components/ui/Theme/ThemeProvider";
