@@ -14,6 +14,7 @@ import {
   List,
   SlidersHorizontal,
   MapPin,
+  CreditCard,
 } from "lucide-react";
 import { dummyBusinesses } from "@/data/BusinessDataDummy";
 
@@ -27,6 +28,7 @@ const BusinessFeed: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedMunicipality, setSelectedMunicipality] = useState("all");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("all");
   const [sortBy, setSortBy] = useState("name");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
@@ -73,7 +75,18 @@ const BusinessFeed: React.FC = () => {
         selectedMunicipality === "all" ||
         business.municipality.toLowerCase() ===
           selectedMunicipality.toLowerCase();
-      return matchesSearch && matchesCategory && matchesMunicipality;
+      const matchesPaymentMethod =
+        selectedPaymentMethod === "all" ||
+        business.paymentMethods.some(
+          (method) =>
+            method.toLowerCase() === selectedPaymentMethod.toLowerCase()
+        );
+      return (
+        matchesSearch &&
+        matchesCategory &&
+        matchesMunicipality &&
+        matchesPaymentMethod
+      );
     })
     .sort((a, b) => {
       switch (sortBy) {
@@ -97,7 +110,13 @@ const BusinessFeed: React.FC = () => {
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, selectedCategory, selectedMunicipality, sortBy]);
+  }, [
+    searchTerm,
+    selectedCategory,
+    selectedMunicipality,
+    selectedPaymentMethod,
+    sortBy,
+  ]);
 
   const handlePageChange = async (newPage: number) => {
     // Set pagination loading state
@@ -127,7 +146,7 @@ const BusinessFeed: React.FC = () => {
     }, 300);
   };
 
-  // Get unique categories and municipalities for filters
+  // Get unique categories, municipalities, and payment methods for filters
   const categories = [
     "all",
     ...Array.from(new Set(businesses.map((b) => b.category))),
@@ -135,6 +154,10 @@ const BusinessFeed: React.FC = () => {
   const municipalities = [
     "all",
     ...Array.from(new Set(businesses.map((b) => b.municipality))),
+  ];
+  const paymentMethods = [
+    "all",
+    ...Array.from(new Set(businesses.flatMap((b) => b.paymentMethods))),
   ];
 
   return (
@@ -163,7 +186,8 @@ const BusinessFeed: React.FC = () => {
                           } found`}
                       {(searchTerm ||
                         selectedCategory !== "all" ||
-                        selectedMunicipality !== "all") && (
+                        selectedMunicipality !== "all" ||
+                        selectedPaymentMethod !== "all") && (
                         <span className="ml-2 text-primary-500 font-medium">
                           • Filtered results
                         </span>
@@ -256,6 +280,27 @@ const BusinessFeed: React.FC = () => {
                   </select>
                 </div>
 
+                {/* Payment Method Filter */}
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <CreditCard className="h-4 w-4 text-primary-500" />
+                    <span className="text-sm font-medium text-text">
+                      Payment:
+                    </span>
+                  </div>
+                  <select
+                    value={selectedPaymentMethod}
+                    onChange={(e) => setSelectedPaymentMethod(e.target.value)}
+                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white shadow-sm transition-all duration-300 min-w-[140px]"
+                  >
+                    {paymentMethods.map((method) => (
+                      <option key={method} value={method}>
+                        {method === "all" ? "All Payment Methods" : method}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 {/* Sort Filter */}
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="flex items-center gap-2 flex-shrink-0">
@@ -276,7 +321,8 @@ const BusinessFeed: React.FC = () => {
                 {/* Clear Filters */}
                 {(searchTerm ||
                   selectedCategory !== "all" ||
-                  selectedMunicipality !== "all") && (
+                  selectedMunicipality !== "all" ||
+                  selectedPaymentMethod !== "all") && (
                   <Button
                     variant="outline"
                     size="sm"
@@ -284,6 +330,7 @@ const BusinessFeed: React.FC = () => {
                       setSearchTerm("");
                       setSelectedCategory("all");
                       setSelectedMunicipality("all");
+                      setSelectedPaymentMethod("all");
                       setSortBy("name");
                     }}
                     className="whitespace-nowrap text-sm hover:bg-primary-50 hover:border-primary-300"
@@ -322,18 +369,21 @@ const BusinessFeed: React.FC = () => {
               <p className="text-text-secondary mb-6 max-w-md mx-auto">
                 {searchTerm ||
                 selectedCategory !== "all" ||
-                selectedMunicipality !== "all"
+                selectedMunicipality !== "all" ||
+                selectedPaymentMethod !== "all"
                   ? "Try adjusting your search terms or filters to find what you're looking for."
                   : "We couldn't find any businesses at the moment. Please try again later."}
               </p>
               {(searchTerm ||
                 selectedCategory !== "all" ||
-                selectedMunicipality !== "all") && (
+                selectedMunicipality !== "all" ||
+                selectedPaymentMethod !== "all") && (
                 <Button
                   onClick={() => {
                     setSearchTerm("");
                     setSelectedCategory("all");
                     setSelectedMunicipality("all");
+                    setSelectedPaymentMethod("all");
                     setSortBy("name");
                   }}
                   className="mx-auto"

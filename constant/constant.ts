@@ -54,7 +54,7 @@ export const mobileNavLinks = [
   },
   {
     id: 5,
-    url: "/login",
+    url: "/auth/login",
     label: "Login",
     icon: HiArrowRightOnRectangle,
   },

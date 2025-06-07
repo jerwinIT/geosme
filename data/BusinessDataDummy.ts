@@ -11,6 +11,7 @@ export const dummyBusinesses: Business[] = [
     category: "Café",
     priceRange: "₱₱",
     isFavorite: false,
+    paymentMethods: ["GCash", "PayMaya", "Cash"],
   },
   {
     id: "2",
@@ -22,6 +23,7 @@ export const dummyBusinesses: Business[] = [
     category: "Technology",
     priceRange: "₱₱₱",
     isFavorite: true,
+    paymentMethods: ["Bank Transfer", "GCash", "PayMaya"],
   },
   {
     id: "3",
@@ -33,6 +35,7 @@ export const dummyBusinesses: Business[] = [
     category: "Gardening",
     priceRange: "₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "GCash"],
   },
   {
     id: "4",
@@ -44,6 +47,7 @@ export const dummyBusinesses: Business[] = [
     category: "Restaurant",
     priceRange: "₱₱",
     isFavorite: true,
+    paymentMethods: ["GCash", "PayMaya", "Cash"],
   },
   {
     id: "5",
@@ -55,6 +59,7 @@ export const dummyBusinesses: Business[] = [
     category: "Bakery",
     priceRange: "₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "GCash", "PayMaya"],
   },
   {
     id: "6",
@@ -66,6 +71,7 @@ export const dummyBusinesses: Business[] = [
     category: "Marketing",
     priceRange: "₱₱₱",
     isFavorite: true,
+    paymentMethods: ["Bank Transfer", "GCash", "Credit Card"],
   },
   {
     id: "7",
@@ -77,6 +83,7 @@ export const dummyBusinesses: Business[] = [
     category: "Seafood",
     priceRange: "₱₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "GCash"],
   },
   {
     id: "8",
@@ -88,6 +95,7 @@ export const dummyBusinesses: Business[] = [
     category: "Wellness",
     priceRange: "₱₱₱",
     isFavorite: false,
+    paymentMethods: ["Bank Transfer", "GCash", "PayMaya"],
   },
   {
     id: "9",
@@ -99,6 +107,7 @@ export const dummyBusinesses: Business[] = [
     category: "Handicrafts",
     priceRange: "₱",
     isFavorite: true,
+    paymentMethods: ["Cash", "GCash", "PayMaya"],
   },
   {
     id: "10",
@@ -110,6 +119,7 @@ export const dummyBusinesses: Business[] = [
     category: "Automotive",
     priceRange: "₱₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "Bank Transfer", "GCash"],
   },
   {
     id: "11",
@@ -121,6 +131,7 @@ export const dummyBusinesses: Business[] = [
     category: "Fashion",
     priceRange: "₱₱₱",
     isFavorite: true,
+    paymentMethods: ["GCash", "PayMaya", "Credit Card"],
   },
   {
     id: "12",
@@ -132,6 +143,7 @@ export const dummyBusinesses: Business[] = [
     category: "Restaurant",
     priceRange: "₱₱₱",
     isFavorite: false,
+    paymentMethods: ["Bank Transfer", "GCash", "Credit Card"],
   },
   {
     id: "13",
@@ -143,6 +155,7 @@ export const dummyBusinesses: Business[] = [
     category: "Pet Care",
     priceRange: "₱₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "GCash", "PayMaya"],
   },
   {
     id: "14",
@@ -154,6 +167,7 @@ export const dummyBusinesses: Business[] = [
     category: "Photography",
     priceRange: "₱₱₱",
     isFavorite: true,
+    paymentMethods: ["Bank Transfer", "GCash", "PayMaya"],
   },
   {
     id: "15",
@@ -165,6 +179,7 @@ export const dummyBusinesses: Business[] = [
     category: "Agriculture",
     priceRange: "₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "GCash"],
   },
   {
     id: "16",
@@ -176,6 +191,7 @@ export const dummyBusinesses: Business[] = [
     category: "Sports",
     priceRange: "₱₱",
     isFavorite: false,
+    paymentMethods: ["GCash", "PayMaya", "Cash"],
   },
   {
     id: "17",
@@ -187,6 +203,7 @@ export const dummyBusinesses: Business[] = [
     category: "Books & Café",
     priceRange: "₱₱",
     isFavorite: true,
+    paymentMethods: ["Cash", "GCash", "PayMaya"],
   },
   {
     id: "18",
@@ -198,6 +215,7 @@ export const dummyBusinesses: Business[] = [
     category: "Electronics",
     priceRange: "₱₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "Bank Transfer", "GCash"],
   },
   {
     id: "19",
@@ -209,6 +227,7 @@ export const dummyBusinesses: Business[] = [
     category: "Florist",
     priceRange: "₱",
     isFavorite: false,
+    paymentMethods: ["Cash", "GCash"],
   },
   {
     id: "20",
@@ -220,5 +239,6 @@ export const dummyBusinesses: Business[] = [
     category: "Construction",
     priceRange: "₱₱₱",
     isFavorite: true,
+    paymentMethods: ["Bank Transfer", "Cash", "GCash"],
   },
 ];

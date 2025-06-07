@@ -34,6 +34,17 @@ export default function AboutHero() {
                 that connects consumers with SMEs while providing valuable
                 market intelligence to business owners.
               </p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary">
+                Beyond business discovery and market insights, our platform
+                provides comprehensive information about{" "}
+                <span className="font-semibold text-primary-600">
+                  Fintech adoption among SMEs in Batangas
+                </span>
+                . We analyze digital payment trends, financial technology usage
+                patterns, and digital transformation initiatives to help
+                businesses understand and leverage the evolving financial
+                landscape in the region.
+              </p>
             </div>
 
             {/* Tags */}
@@ -43,6 +54,9 @@ export default function AboutHero() {
               </span>
               <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
                 Data-Driven Insights
+              </span>
+              <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
+                Fintech Adoption Analysis
               </span>
             </div>
           </div>

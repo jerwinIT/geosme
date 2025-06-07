@@ -145,30 +145,32 @@ function StoryContent({ index }: StoryContentProps) {
                     className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-0 animate-slide-in"
                     style={{ animationDelay: "0.3s" }}
                   >
-                    GeoSME Batangas was founded in 2024 by a team of local
-                    entrepreneurs, GIS specialists, and data analysts who
-                    recognized the need for better visibility and market
-                    intelligence for SMEs in Batangas Province.
+                    GeoSME Batangas is our capstone project as 3rd year college
+                    students, developed in partnership with fintech researchers
+                    who serve as our client. We recognized the critical need to
+                    promote SME fintech adoption and enhance business visibility
+                    in Batangas Province through digital innovation.
                   </p>
                   <p
                     className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-0 animate-slide-in"
                     style={{ animationDelay: "0.5s" }}
                   >
-                    What started as a small project to map local businesses has
-                    grown into a comprehensive platform that serves thousands of
-                    businesses and consumers across the province. Our team
-                    continues to expand the platform's capabilities, adding new
-                    features and insights based on user feedback and emerging
-                    technologies.
+                    Our platform combines geospatial technology with
+                    comprehensive fintech analysis to provide location-based
+                    insights and advanced business tools. We're passionate about
+                    bridging the digital divide for SMEs, helping them
+                    understand and adopt financial technologies that can
+                    transform their operations.
                   </p>
                   <p
                     className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-0 animate-slide-in"
                     style={{ animationDelay: "0.7s" }}
                   >
-                    We work closely with local government units, business
-                    associations, and academic institutions to ensure our data
-                    is accurate, comprehensive, and valuable to all stakeholders
-                    in the Batangas business ecosystem.
+                    Through this capstone project, we aim to create lasting
+                    impact by providing SMEs with data-driven insights about
+                    fintech adoption trends, digital payment solutions, and
+                    location-based market analysis that will empower their
+                    growth in the digital economy.
                   </p>
                 </div>
               </div>
@@ -280,23 +282,23 @@ function StatCard({ number, label, index, icon }: StatCardProps) {
 export default function OurStoryImpact() {
   const impactStats = [
     {
-      number: "2,500+",
-      label: "Businesses registered on our platform",
+      number: "500+",
+      label: "SMEs Analyzed for Fintech Adoption",
       icon: <Building2 className="w-6 h-6 sm:w-8 sm:h-8" />,
     },
     {
       number: "24",
-      label: "Municipalities Covered",
+      label: "Municipalities Covered in Research",
       icon: <MapPin className="w-6 h-6 sm:w-8 sm:h-8" />,
     },
     {
-      number: "18%",
-      label: "Average business growth reported",
+      number: "85%",
+      label: "Fintech Adoption Gap Identified",
       icon: <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8" />,
     },
     {
-      number: "15,000+",
-      label: "Monthly Active Users",
+      number: "12",
+      label: "Advanced Business Tools Developed",
       icon: <Users className="w-6 h-6 sm:w-8 sm:h-8" />,
     },
   ];
@@ -312,11 +314,11 @@ export default function OurStoryImpact() {
         {/* Our Impact Section */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold text-text mb-4 sm:mb-6 leading-tight">
-            Our <span className="text-primary-500">Impact</span>
+            Our <span className="text-primary-500">Research</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-            Measurable results that demonstrate our commitment to empowering the
-            Batangas business community.
+            Key findings from our capstone project research on SME fintech
+            adoption and digital transformation in Batangas Province.
           </p>
         </div>
 

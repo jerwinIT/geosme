@@ -13,7 +13,7 @@ const font = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GeoSME",
+  title: "GeoSME Batangas",
   description: "GeoSME Landing Page",
 };
 

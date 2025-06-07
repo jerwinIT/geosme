@@ -34,4 +34,5 @@ export interface Business {
   category: string;
   priceRange: string;
   isFavorite: boolean;
+  paymentMethods: string[];
 }

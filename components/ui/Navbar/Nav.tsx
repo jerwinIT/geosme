@@ -124,11 +124,11 @@ export default function Nav({ openNav }: NavProps) {
 
           <div className="h-6 w-[1px] bg-black/20"></div>
 
-          <Link href="/login">
+          <Link href="/auth/login">
             <Button
               name="Login"
               className={
-                isActiveLink("/login") ? "ring-2 ring-[#d72323]/20" : ""
+                isActiveLink("/auth/login") ? "ring-2 ring-[#d72323]/20" : ""
               }
             />
           </Link>

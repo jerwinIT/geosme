@@ -144,6 +144,13 @@ export default function WhatWeDo() {
       imagePlaceholder: "Analytics & Insights",
       imagePosition: "left" as const,
     },
+    {
+      title: "Fintech Adoption",
+      description:
+        "We provide comprehensive analysis of digital payment trends, financial technology usage patterns, and digital transformation initiatives among SMEs in Batangas to help businesses understand and leverage the evolving financial landscape.",
+      imagePlaceholder: "Fintech Analytics Dashboard",
+      imagePosition: "right" as const,
+    },
   ];
 
   return (
