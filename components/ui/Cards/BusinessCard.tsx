@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, CreditCard } from "lucide-react";
+import { Bookmark, CreditCard } from "lucide-react";
 import Image from "next/image";
 import { Business } from "@/types";
 import { cn } from "@/lib/utils";
@@ -59,10 +59,10 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
           onClick={() => onFavoriteToggle(id)}
           className="absolute right-2 top-2 rounded-full bg-white/80 p-1.5 shadow-sm transition-colors hover:bg-white"
         >
-          <Star
+          <Bookmark
             className={cn(
               "h-5 w-5",
-              isFavorite ? "fill-yellow-400 text-yellow-400" : "text-gray-400"
+              isFavorite ? "fill-primary text-primary" : "text-gray-400"
             )}
           />
         </button>
@@ -73,7 +73,6 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
         <div className="flex items-start justify-between">
           <h3 className="font-semibold line-clamp-1 text-text">{name}</h3>
           <div className="flex items-center gap-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
             <span className="text-sm font-medium text-text">{rating}</span>
           </div>
         </div>

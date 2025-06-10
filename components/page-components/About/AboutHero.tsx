@@ -24,39 +24,62 @@ export default function AboutHero() {
             {/* Body */}
             <div className="flex flex-col gap-6">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary">
-                GeoSME Batangas is dedicated to empowering Small and Medium
-                Enterprises (SMEs) across Batangas Province through innovative
-                geospatial technology and data-driven insights.
+                GeoSME Batangas is a comprehensive web application that provides
+                a complete directory of Small and Medium Enterprises (SMEs) in
+                Batangas province, powered by advanced digital mapping
+                technology similar to Google Maps for seamless business
+                discovery and navigation.
               </p>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary">
-                We believe that local businesses are the backbone of the
-                economy, and our mission is to create a comprehensive platform
-                that connects consumers with SMEs while providing valuable
-                market intelligence to business owners.
+                Built upon extensive research that systematically gathered data
+                on SMEs across Batangas, our platform focuses on understanding
+                and documenting fintech adoption patterns among local
+                businesses. Users can search for specific SMEs, bookmark
+                businesses, navigate to physical locations, and contribute
+                through comments and reviews.
               </p>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary">
-                Beyond business discovery and market insights, our platform
-                provides comprehensive information about{" "}
+                Beyond basic business discovery, our platform features
+                sophisticated{" "}
                 <span className="font-semibold text-primary-600">
-                  Fintech adoption among SMEs in Batangas
-                </span>
-                . We analyze digital payment trends, financial technology usage
-                patterns, and digital transformation initiatives to help
-                businesses understand and leverage the evolving financial
-                landscape in the region.
+                  specialized map layers
+                </span>{" "}
+                that visualize fintech solutions used by various SMEs and{" "}
+                <span className="font-semibold text-primary-600">
+                  business density heatmaps
+                </span>{" "}
+                that reveal market saturation levels across different
+                municipalities and business categories, helping entrepreneurs
+                identify opportunities and understand competitive landscapes.
+              </p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary">
+                Our dedicated{" "}
+                <span className="font-semibold text-primary-600">
+                  Business Owner Portal
+                </span>{" "}
+                provides SME owners with comprehensive dashboard access to
+                valuable metrics, including user navigation tracking, engagement
+                analytics, review management, and competitor analysis tools
+                within specific radius areas for strategic business positioning.
               </p>
             </div>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-3 mt-8">
               <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
-                Empowering SME Business
+                Advanced Mapping Technology
               </span>
               <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
-                Data-Driven Insights
+                Fintech Adoption Research
               </span>
               <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
-                Fintech Adoption Analysis
+                Business Density Analytics
+              </span>
+              <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
+                Business Owner Dashboard
+              </span>
+              <span className="px-4 py-2 bg-primary-400 text-[#fff] rounded-full text-sm sm:text-base font-medium">
+                Market Intelligence
               </span>
             </div>
           </div>

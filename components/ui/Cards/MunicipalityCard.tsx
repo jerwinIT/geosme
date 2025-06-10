@@ -19,7 +19,7 @@ const MunicipalityCard: React.FC<MunicipalityCardProps> = ({
   };
 
   return (
-    <div className="relative bg-background rounded-xl sm:rounded-2xl overflow-hidden w-full h-[90px] sm:h-[100px] md:h-[110px] lg:h-[120px] xl:h-[130px] shadow-lg transition-transform duration-300 hover:text-primary-500 cursor-pointer group hover:scale-[1.02]">
+    <div className="relative bg-background rounded-xl sm:rounded-2xl overflow-hidden w-full h-[260px] sm:h-[280]] md:h-[300px] lg:h-[320px] xl:h-[400px] shadow-lg transition-transform duration-300 hover:text-primary-500 cursor-pointer group hover:scale-[1.02]">
       {/* Background Image */}
       <Image
         src={imageUrl}

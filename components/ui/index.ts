@@ -5,6 +5,7 @@ export { Input } from "./input";
 export { default as ThemeLogo } from "./Theme/ThemeLogo";
 export { default as ThemeProvider } from "./Theme/ThemeProvider";
 export { default as ThemeToggle } from "./Theme/ThemeToggle";
+export { default as CTAButton } from "./Buttons/CTAButton";
 
 // Export Home components
 export { default as ResponsiveNavbar } from "./Navbar/Responsive";

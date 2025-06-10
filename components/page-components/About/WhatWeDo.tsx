@@ -124,31 +124,31 @@ function FeatureSection({
 export default function WhatWeDo() {
   const features = [
     {
-      title: "Interactive Mapping",
+      title: "Advanced Mapping Technology",
       description:
-        "Our GIS-powered interactive map allows consumers to discover and locate SMEs across Batangas Province, with detailed information about each business and navigation assistance.",
-      imagePlaceholder: "Interactive Map Interface",
+        "Our sophisticated mapping platform, similar to Google Maps, enables users to discover and navigate to SMEs across Batangas Province. Features specialized map layers that visualize fintech solutions used by various businesses, creating a comprehensive view of financial technology adoption patterns.",
+      imagePlaceholder: "Interactive Map with Fintech Layers",
       imagePosition: "left" as const,
     },
     {
-      title: "Business Directory",
+      title: "Comprehensive Business Directory",
       description:
-        "We maintain a comprehensive directory of SMEs in Batangas, categorized by industry, location, and services offered, making it easy for consumers to find exactly what they're looking for.",
-      imagePlaceholder: "Business Directory Dashboard",
+        "Built upon extensive research that systematically gathered SME data across Batangas, our directory allows users to search, bookmark businesses, and contribute reviews. The platform serves as both a business discovery tool and an interactive community hub for local commerce.",
+      imagePlaceholder: "Business Directory & Reviews",
       imagePosition: "right" as const,
     },
     {
-      title: "Market Insights",
+      title: "Business Density Analytics",
       description:
-        "We analyze business density, consumer behavior, and market trends to provide valuable insights to both existing business owners and entrepreneurs looking for opportunities.",
-      imagePlaceholder: "Analytics & Insights",
+        "Our platform features advanced business heatmap layers that visualize SME density based on specific categories across different municipalities. These analytics reveal market saturation levels, helping entrepreneurs identify oversaturated markets and underserved opportunities.",
+      imagePlaceholder: "Density Heatmaps & Analytics",
       imagePosition: "left" as const,
     },
     {
-      title: "Fintech Adoption",
+      title: "Business Owner Portal",
       description:
-        "We provide comprehensive analysis of digital payment trends, financial technology usage patterns, and digital transformation initiatives among SMEs in Batangas to help businesses understand and leverage the evolving financial landscape.",
-      imagePlaceholder: "Fintech Analytics Dashboard",
+        "A dedicated dashboard providing SME owners with comprehensive metrics including user navigation tracking, engagement analytics, review management, and competitor analysis within specific radius areas. This empowers business owners with strategic insights for market positioning.",
+      imagePlaceholder: "Business Owner Dashboard",
       imagePosition: "right" as const,
     },
   ];
@@ -161,8 +161,10 @@ export default function WhatWeDo() {
             What We <span className="text-primary-500">Do</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-            Empowering small and medium enterprises in Batangas through
-            innovative technology and comprehensive business support services.
+            Combining extensive SME research with advanced mapping technology to
+            create a comprehensive platform that serves consumers, businesses,
+            and entrepreneurs with valuable market intelligence and business
+            discovery tools.
           </p>
         </div>
 

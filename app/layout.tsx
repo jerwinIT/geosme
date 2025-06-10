@@ -13,8 +13,13 @@ const font = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GeoSME Batangas",
-  description: "GeoSME Landing Page",
+  title: {
+    default: "GeoSME Batangas",
+    template: "%s | GeoSME Batangas",
+  },
+  description:
+    "Discover Small and Medium Enterprises in Batangas with advanced mapping technology. Features business directory, fintech adoption insights, density analytics, and business owner dashboard for comprehensive market intelligence.",
+  metadataBase: new URL("https://geosme.vercel.app"),
 };
 
 export default function RootLayout({

@@ -6,6 +6,7 @@ import { navLinks } from "@/constant/constant";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import ThemeLogo from "@/components/ui/Theme/ThemeLogo";
 import Button from "@/components/ui/Buttons/Button";
+import { ChevronDown } from "lucide-react";
 
 type NavProps = {
   openNav: () => void;
@@ -14,6 +15,7 @@ type NavProps = {
 export default function Nav({ openNav }: NavProps) {
   const [showTooltip, setShowTooltip] = useState(true);
   const [showMobileTooltip, setShowMobileTooltip] = useState(true);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -33,6 +35,11 @@ export default function Nav({ openNav }: NavProps) {
     return pathname.startsWith(url);
   };
 
+  // Helper function to check if any dropdown item is active
+  const isDropdownActive = (items: any[]) => {
+    return items?.some((item) => pathname.startsWith(item.url));
+  };
+
   return (
     <div className="flex w-full h-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[100px] bg-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] fixed z-[1000]">
       <div className="flex items-center justify-between w-full max-w-[1440px] mx-auto">
@@ -49,31 +56,98 @@ export default function Nav({ openNav }: NavProps) {
         {/* Nav Links */}
         <div className="hidden lg:flex items-center justify-center gap-8 w-2/4">
           {navLinks.map((links) => {
-            const isActive = isActiveLink(links.url);
+            const isActive = links.dropdownItems
+              ? isDropdownActive(links.dropdownItems)
+              : isActiveLink(links.url);
+
             return (
-              <Link
+              <div
                 key={links.id}
-                href={links.url}
                 className="relative group"
-                aria-current={isActive ? "page" : undefined}
+                onMouseEnter={() => setActiveDropdown(links.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                <p
-                  className={`relative text-sm font-poppins font-normal leading-normal transition-colors duration-300 ${
-                    isActive
-                      ? "text-[#d72323] font-medium"
-                      : "text-text-secondary hover:text-[#d72323]"
-                  }`}
-                >
-                  {links.label}
-                  <span
-                    className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                {links.dropdownItems ? (
+                  // Dropdown trigger
+                  <button
+                    className={`flex items-center gap-1 group ${
                       isActive
-                        ? "w-full bg-[#d72323]"
-                        : "w-0 bg-black/50 group-hover:w-full group-hover:bg-[#d72323]"
+                        ? "text-[#d72323] font-medium"
+                        : "text-text-secondary hover:text-[#d72323]"
                     }`}
-                  ></span>
-                </p>
-              </Link>
+                  >
+                    <span className="text-sm font-poppins font-normal leading-normal">
+                      {links.label}
+                    </span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        activeDropdown === links.label ? "rotate-180" : ""
+                      }`}
+                    />
+                    <span
+                      className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                        isActive
+                          ? "w-full bg-[#d72323]"
+                          : "w-0 bg-black/50 group-hover:w-full group-hover:bg-[#d72323]"
+                      }`}
+                    ></span>
+                  </button>
+                ) : (
+                  // Regular link
+                  <Link
+                    href={links.url}
+                    className="relative group"
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    <p
+                      className={`relative text-sm font-poppins font-normal leading-normal transition-colors duration-300 ${
+                        isActive
+                          ? "text-[#d72323] font-medium"
+                          : "text-text-secondary hover:text-[#d72323]"
+                      }`}
+                    >
+                      {links.label}
+                      <span
+                        className={`absolute bottom-0 left-0 h-0.5 transition-all duration-300 ${
+                          isActive
+                            ? "w-full bg-[#d72323]"
+                            : "w-0 bg-black/50 group-hover:w-full group-hover:bg-[#d72323]"
+                        }`}
+                      ></span>
+                    </p>
+                  </Link>
+                )}
+
+                {/* Dropdown menu */}
+                {links.dropdownItems && (
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ${
+                      activeDropdown === links.label
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible translate-y-2"
+                    }`}
+                  >
+                    <div className="relative bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden min-w-[200px]">
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-gray-100 rotate-45"></div>
+                      <div className="relative bg-white py-2">
+                        {links.dropdownItems.map((item) => (
+                          <Link
+                            key={item.id}
+                            href={item.url}
+                            className={`block px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 ${
+                              isActiveLink(item.url)
+                                ? "text-[#d72323] font-medium bg-[#d72323]/5"
+                                : "text-gray-700"
+                            }`}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>

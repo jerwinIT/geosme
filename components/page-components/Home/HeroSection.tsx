@@ -1,9 +1,9 @@
 import React from "react";
-import SearchBar from "@/components/ui/SearchBar";
-import Link from "next/link";
 import MunicipalityCard from "@/components/ui/Cards/MunicipalityCard";
 import MunicipalityCardSkeleton from "@/components/ui/Skeleton/MunicipalityCardSkeleton";
 import { Municipality } from "@/types";
+import { Building2, LineChart, MapPin } from "lucide-react";
+import CTAButton from "@/components/ui/Buttons/CTAButton";
 
 export default function HeroSection() {
   const isLoading = false;
@@ -14,30 +14,38 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-surface  -mt-20 pt-20">
+    <div className="relative w-full h-screen flex items-center justify-center bg-surface -mt-20 pt-20">
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight text-text">
-            Discover Local <span className="text-primary-500">Businesses</span>{" "}
-            in <span className="text-primary-500">Batangas</span>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight text-text">
+            Empowering <span className="text-primary-500">Batangas SMEs</span>{" "}
+            with <span className="text-primary-500">Data-Driven Insights</span>
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
-            Connect with Small and Medium Enterprises across Batangas Province.
-            Find services, explore market trends, and support local businesses.
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+            Your comprehensive platform for SME discovery, business analytics,
+            and fintech adoption insights across Batangas Province.
           </p>
 
-          {/* Search Bar */}
-          <div className="">
-            {/* You can add your search bar component here */}
-            <SearchBar />
-            <Link
-              href="/search"
-              className="rounded-[50px] px-14 md:px-28 -mt-4 py-2.5 overflow-hidden group bg-primary-500 relative hover:bg-primary-600 transition-all duration-300 text-white"
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+            <CTAButton href="/explore" icon={MapPin} variant="primary">
+              Explore SMEs
+            </CTAButton>
+            <CTAButton
+              href="/business-portal"
+              icon={Building2}
+              variant="secondary"
             >
-              <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000"></span>
-              <span className="relative font-bold text-[#fff]">Search</span>
-            </Link>
+              Business Portal
+            </CTAButton>
+            <CTAButton
+              href="/fintech-insights"
+              icon={LineChart}
+              variant="tertiary"
+            >
+              Fintech SME
+            </CTAButton>
           </div>
         </div>
       </div>

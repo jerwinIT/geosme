@@ -65,10 +65,7 @@ export default function BusinessCategories() {
   };
 
   return (
-    <div
-      id="business-categories"
-      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8"
-    >
+    <div id="business-categories" className="w-full max-w-[1440px]">
       <div className="flex items-center gap-2 md:gap-4">
         {/* Scrollable Container */}
         <div

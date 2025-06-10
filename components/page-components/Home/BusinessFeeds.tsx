@@ -324,7 +324,7 @@ const BusinessFeed: React.FC = () => {
                   selectedMunicipality !== "all" ||
                   selectedPaymentMethod !== "all") && (
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="sm"
                     onClick={() => {
                       setSearchTerm("");
@@ -433,7 +433,7 @@ const BusinessFeed: React.FC = () => {
             <div className="flex items-center gap-2">
               {/* Previous Button */}
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1 || isPaginationLoading}
@@ -449,7 +449,7 @@ const BusinessFeed: React.FC = () => {
                 {currentPage > 3 && (
                   <>
                     <Button
-                      variant="outline"
+                      variant="ghost"
                       size="sm"
                       onClick={() => handlePageChange(1)}
                       disabled={isPaginationLoading}
@@ -479,16 +479,14 @@ const BusinessFeed: React.FC = () => {
                   return (
                     <Button
                       key={pageNumber}
-                      variant={
-                        currentPage === pageNumber ? "default" : "outline"
-                      }
+                      variant={currentPage === pageNumber ? "default" : "ghost"}
                       size="sm"
                       onClick={() => handlePageChange(pageNumber)}
                       disabled={isPaginationLoading}
                       className={`h-10 w-10 ${
                         currentPage === pageNumber
                           ? "bg-primary-500 text-white hover:bg-primary-600"
-                          : "hover:bg-gray-100"
+                          : "hover:bg-primary-500/10"
                       }`}
                     >
                       {pageNumber}
@@ -503,7 +501,7 @@ const BusinessFeed: React.FC = () => {
                       <span className="px-2 text-text-secondary">...</span>
                     )}
                     <Button
-                      variant="outline"
+                      variant="ghost"
                       size="sm"
                       onClick={() => handlePageChange(totalPages)}
                       disabled={isPaginationLoading}
@@ -517,7 +515,7 @@ const BusinessFeed: React.FC = () => {
 
               {/* Next Button */}
               <Button
-                variant="outline"
+                variant="ghost"
                 size="sm"
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages || isPaginationLoading}

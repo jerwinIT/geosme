@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { SignUpForm } from "@/components/auth";
 
 export const metadata: Metadata = {
-  title: "Sign Up - GeoSME Batangas",
+  title: "Sign Up",
   description:
     "Create your GeoSME account to access business insights, fintech adoption data, and location-based market analysis for SMEs in Batangas Province.",
   keywords:
