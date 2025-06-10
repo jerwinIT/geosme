@@ -1,5 +1,5 @@
 export { default as HeroSection } from "./HeroSection";
-export { default as BusinessCategories } from "./BusinessCategories";
-export { default as Municipalities } from "./Municipalities";
-
-export { default as BusinessFeeds } from "./BusinessFeeds";
+export { default as FeaturedBusiness } from "./FeaturedBusiness";
+export { default as WhatWeOffer } from "./WhatWeOffer";
+export { default as WhyChoose } from "./WhyChoose";
+export { default as CTAUsers } from "./CTAUsers";

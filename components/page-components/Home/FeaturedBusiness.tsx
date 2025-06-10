@@ -10,7 +10,7 @@ const FeaturedBusiness: React.FC = () => {
   // Get top 4 businesses by rating
   const featuredBusinesses = [...dummyBusinesses]
     .sort((a, b) => b.rating - a.rating)
-    .slice(0, 8);
+    .slice(0, 4);
 
   const handleFavoriteToggle = (id: string) => {
     // TODO: Implement favorite toggle logic
@@ -22,18 +22,19 @@ const FeaturedBusiness: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center">
+      <div className="w-full max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold text-text mb-4 sm:mb-6 leading-tight">
-            Featured <span className="text-primary-500">SMEs</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+            Explore <span className="text-primary-500">SMEs</span> Across
+            Batangas
           </h2>
-          <p className="text-lg md:text-lg lg:text-xl xl:text-2xl text-text-secondary">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
             Discover top-rated SMEs in Batangas
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredBusinesses.map((business) => (
             <BusinessCard
               key={business.id}

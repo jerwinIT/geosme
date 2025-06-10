@@ -1,74 +1,55 @@
 import React from "react";
-import MunicipalityCard from "@/components/ui/Cards/MunicipalityCard";
-import MunicipalityCardSkeleton from "@/components/ui/Skeleton/MunicipalityCardSkeleton";
-import { Municipality } from "@/types";
-import { Building2, LineChart, MapPin } from "lucide-react";
+
+import { BarChart3, Building2, MapPin, Star, Sparkles } from "lucide-react";
 import CTAButton from "@/components/ui/Buttons/CTAButton";
+import Badge from "@/components/ui/badge";
 
 export default function HeroSection() {
-  const isLoading = false;
-  const numberOfCards = 5;
-  const municipalities: Municipality[] = [];
-  const handleError = () => {
-    // Implementation of handleError
-  };
-
   return (
-    <div className="relative w-full h-screen flex items-center justify-center bg-surface -mt-20 pt-20">
+    <div className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center bg-surface pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20">
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight text-text">
-            Empowering <span className="text-primary-500">Batangas SMEs</span>{" "}
-            with <span className="text-primary-500">Data-Driven Insights</span>
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
-            Your comprehensive platform for SME discovery, business analytics,
-            and fintech adoption insights across Batangas Province.
-          </p>
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto  text-center">
+        <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
+          <Badge icon={<Sparkles className="w-4 h-4 text-primary-500" />}>
+            Complete SME Coverage • Batangas 2024
+          </Badge>
+
+          <div className="space-y-4 md:space-y-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-text">
+              Every Listed SME in Batangas{" "}
+              <span className="text-primary-500 block sm:inline">
+                Now Mapped & Analyzed
+              </span>
+            </h1>
+
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+              The most comprehensive SME database in Batangas Province. Explore
+              all registered businesses with exclusive fintech adoption insights
+              and market intelligence data.
+            </p>
+          </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <CTAButton href="/explore" icon={MapPin} variant="primary">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 md:mt-12">
+            <CTAButton
+              href="/explore"
+              icon={MapPin}
+              variant="primary"
+              className="w-full sm:w-auto"
+            >
               Explore SMEs
             </CTAButton>
             <CTAButton
               href="/business-portal"
               icon={Building2}
               variant="secondary"
+              className="w-full sm:w-auto"
             >
-              Business Portal
-            </CTAButton>
-            <CTAButton
-              href="/fintech-insights"
-              icon={LineChart}
-              variant="tertiary"
-            >
-              Fintech SME
+              Access Market Intelligence
             </CTAButton>
           </div>
         </div>
       </div>
-
-      {isLoading
-        ? // Show skeleton loading
-          Array.from({ length: numberOfCards }).map((_, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 min-w-[200px] sm:min-w-[250px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[360px]"
-            >
-              <MunicipalityCardSkeleton />
-            </div>
-          ))
-        : // Show actual cards
-          municipalities.map((municipality) => (
-            <div
-              key={municipality.id}
-              className="flex-shrink-0 min-w-[200px] sm:min-w-[250px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[360px]"
-            >
-              <MunicipalityCard {...municipality} onError={handleError} />
-            </div>
-          ))}
     </div>
   );
 }

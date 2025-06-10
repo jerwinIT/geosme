@@ -8,11 +8,3 @@ export default function Home() {
     </div>
   );
 }
-
-//Public Routes
-//Home Page
-//About Page
-//Map Page
-//Business Directory Page
-//Login Page
-//Signup Page

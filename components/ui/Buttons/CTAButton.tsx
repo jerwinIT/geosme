@@ -22,7 +22,7 @@ const CTAButton = ({
 
   const variants = {
     primary: "bg-primary-500 hover:bg-primary-600",
-    secondary: "bg-primary-500/90 hover:bg-primary-600",
+    secondary: "bg-black text-white hover:bg-black/90",
     tertiary: "bg-primary-500/80 hover:bg-primary-600",
   };
 

@@ -3,7 +3,7 @@ import {
   BusinessCategories,
   BusinessFeeds,
   Municipalities,
-} from "@/components/page-components";
+} from "@/components/page-components/Explore";
 import SearchBar from "@/components/ui/SearchBar";
 import Link from "next/link";
 import { Metadata } from "next";

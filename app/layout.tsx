@@ -39,7 +39,7 @@ export default function RootLayout({
             <ResponsiveNavbar />
 
             {/* Main Content */}
-            <main className="flex-1 pt-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[100px]">
+            <main className="flex-1  pt-20 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[100px] justify-center items-center">
               {children}
             </main>
 
