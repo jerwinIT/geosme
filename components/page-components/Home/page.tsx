@@ -7,6 +7,8 @@ import {
   WhatWeOffer,
   WhyChoose,
   CTAUsers,
+  AnalyticsSection,
+  BusinessPortalSection,
 } from "./index";
 
 export default function HomePage() {
@@ -37,6 +39,15 @@ export default function HomePage() {
         </div>
       </div>
 
+      <AnalyticsSection />
+      {/* Separator Line */}
+      <div className="flex justify-center py-8">
+        <div className="w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
+          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        </div>
+      </div>
+
+      <BusinessPortalSection />
       {/* Separator Line */}
       <div className="flex justify-center py-8">
         <div className="w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">

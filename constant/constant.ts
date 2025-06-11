@@ -8,6 +8,8 @@ import {
   HiChartBar,
 } from "react-icons/hi2";
 
+import { FaStore } from "react-icons/fa6";
+
 export const LOGO_PATH = "/Images/Logo/geosme-logo-light.png";
 
 export const navLinks = [
@@ -18,11 +20,16 @@ export const navLinks = [
   },
   {
     id: 2,
+    url: "/sme",
+    label: "SMEs",
+  },
+  {
+    id: 3,
     url: "/map",
     label: "Map",
   },
   {
-    id: 3,
+    id: 4,
     url: "/insights",
     label: "Insights",
     dropdownItems: [
@@ -39,7 +46,7 @@ export const navLinks = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     url: "/about",
     label: "About",
   },
@@ -54,42 +61,48 @@ export const mobileNavLinks = [
   },
   {
     id: 2,
+    url: "/sme",
+    label: "SMEs",
+    icon: FaStore,
+  },
+  {
+    id: 3,
     url: "/map",
     label: "Map",
     icon: HiMap,
   },
   {
-    id: 3,
+    id: 4,
     url: "/explore",
     label: "Explore SME",
     icon: HiChartBar,
   },
   {
-    id: 4,
+    id: 5,
     url: "/fintech-insights",
     label: "View Fintech SME",
     icon: HiChartBar,
   },
   {
-    id: 5,
+    id: 6,
     url: "/about",
     label: "About",
     icon: HiInformationCircle,
   },
   {
-    id: 6,
+    id: 7,
     url: "/business-portal",
     label: "Business Portal",
     icon: HiBuildingOffice2,
   },
   {
-    id: 7,
+    id: 8,
     url: "/auth/login",
     label: "Login",
     icon: HiArrowRightOnRectangle,
   },
   {
-    id: 8,
+    id: 9,
     url: "/auth/signup",
     label: "Sign Up",
     icon: HiUserPlus,

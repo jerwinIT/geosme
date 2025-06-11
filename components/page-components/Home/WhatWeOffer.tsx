@@ -125,7 +125,7 @@ function FeatureSection({
                 >
                   <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-200">
                     <ChevronRight
-                      className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white"
+                      className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#fff]"
                       strokeWidth={2.5}
                     />
                   </div>
@@ -162,8 +162,8 @@ function FeatureSection({
 
 export default function WhatWeOffer() {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center py-12 sm:py-16 md:py-20">
-      <div className="w-full max-w-7xl mx-auto">
+    <section className="relative w-full min-h-[calc(100vh-5rem)] flex flex-col justify-center items-center py-12 sm:py-16 md:py-20">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto">
         <div className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20 max-w-4xl mx-auto animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-text">
             What We <span className="text-primary-500">Offer</span>
@@ -174,7 +174,7 @@ export default function WhatWeOffer() {
           </p>
         </div>
 
-        <div className="space-y-16 sm:space-y-20 md:space-y-24 lg:space-y-28 max-w-6xl mx-auto">
+        <div className="space-y-16 sm:space-y-20 md:space-y-24 lg:space-y-28 ">
           {features.map((feature, index) => (
             <FeatureSection
               key={index}

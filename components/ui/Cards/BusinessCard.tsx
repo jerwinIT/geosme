@@ -61,8 +61,10 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
         >
           <Bookmark
             className={cn(
-              "h-5 w-5",
-              isFavorite ? "fill-primary text-primary" : "text-gray-400"
+              "h-6 w-6 ",
+              isFavorite
+                ? "fill-gray-400 text-gray-400"
+                : "text-primary-500 fill-primary-500"
             )}
           />
         </button>

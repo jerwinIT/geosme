@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { BusinessCard } from "@/components/ui/Cards";
 import { dummyBusinesses } from "@/data/BusinessDataDummy";
 import CTAButton from "@/components/ui/Buttons/CTAButton";
+import Badge from "@/components/ui/badge";
+import { Flame } from "lucide-react";
 
 const FeaturedBusiness: React.FC = () => {
   // Get top 4 businesses by rating
@@ -22,10 +23,13 @@ const FeaturedBusiness: React.FC = () => {
   };
 
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center">
-      <div className="w-full max-w-7xl mx-auto">
+    <section className="w-relative w-full min-h-[calc(100vh-5rem)]  flex flex-col justify-center items-center">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+          <Badge icon={<Flame className="w-4 h-4 text-primary-500" />}>
+            Featured Businesses
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-text">
             Explore <span className="text-primary-500">SMEs</span> Across
             Batangas
           </h2>
@@ -46,7 +50,7 @@ const FeaturedBusiness: React.FC = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <CTAButton href="/explore">View All SMEs</CTAButton>
+        <CTAButton href="/sme">View All SMEs</CTAButton>
       </div>
     </section>
   );

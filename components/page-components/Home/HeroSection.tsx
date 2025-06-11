@@ -6,7 +6,7 @@ import Badge from "@/components/ui/badge";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center bg-surface pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20">
+    <section className="relative w-full min-h-[calc(100vh-5rem)] flex items-center justify-center bg-surface pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-16 lg:pb-20">
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto  text-center">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8 lg:space-y-10">
@@ -50,6 +50,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
